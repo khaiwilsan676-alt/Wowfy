@@ -1,0 +1,37 @@
+plugins { id 'com.android.application' }
+
+android {
+    namespace = 'com.wowfy.app'
+    compileSdk = rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        applicationId = 'com.wowfy.app'
+        minSdk = rootProject.ext.minSdkVersion
+        targetSdk = rootProject.ext.targetSdkVersion
+        versionCode = 1
+        versionName = '1.0.0'
+        testInstrumentationRunner = 'androidx.test.runner.AndroidJUnitRunner'
+        vectorDrawables { useSupportLibrary = true }
+    }
+
+    buildTypes {
+        debug { minifyEnabled false }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
+    }
+}
+
+dependencies {
+    implementation project(':capacitor-android')
+    implementation "androidx.activity:activity:$rootProject.ext.androidxActivityVersion"
+    implementation "androidx.appcompat:appcompat:$rootProject.ext.androidxAppCompatVersion"
+    implementation "androidx.core:core:$rootProject.ext.androidxCoreVersion"
+    implementation "androidx.core:core-splashscreen:$rootProject.ext.coreSplashScreenVersion"
+}
