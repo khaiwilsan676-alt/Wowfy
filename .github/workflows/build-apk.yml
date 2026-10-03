@@ -27,10 +27,15 @@ jobs:
           distribution: temurin
           java-version: '21'
 
-      - name: Prepare Android SDK
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v4
+        with:
+          packages: ''
+          accept-android-sdk-licenses: true
+
+      - name: Install Android 36 SDK
         run: |
-          yes | sdkmanager --licenses >/dev/null || true
-          sdkmanager "platforms;android-36" "build-tools;36.0.0" "platform-tools"
+          sdkmanager --install "platform-tools" "platforms;android-36" "build-tools;36.0.0"
 
       - name: Setup Gradle 8.14.3
         uses: gradle/actions/setup-gradle@v4
