@@ -1,0 +1,1 @@
+document.querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{if(b.classList.contains("cat")){document.querySelectorAll(".cat").forEach(x=>x.classList.remove("selected"));b.classList.add("selected")}if(b.textContent.includes("♡"))b.textContent=b.textContent.trim()==="♡"?"♥":"♡"}));
