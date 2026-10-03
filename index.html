@@ -1,34 +1,58 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Wowfy — Food Delivery</title><link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#ff5a1f">
+<title>Wowfy — Food Delivery</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <div class="app">
 <header class="topbar">
-  <div class="location"><span class="pin">⌖</span><div><small>Deliver to</small><strong>Home <span>⌄</span></strong></div></div>
+  <div class="brand"><img src="public/assets/file_00000000b70c820bb85f80d93e0813a9.png" alt="Wowfy"><div><small>Delivering to</small><strong>Home <span>⌄</span></strong></div></div>
   <button class="profile">W</button>
 </header>
 <main>
 <section class="hero">
-  <div><p>Hungry?</p><h1>Good food,<br><b>good mood.</b></h1><div class="search">⌕ <span>Search for food or restaurants</span></div></div>
-  <div class="hero-food">🍔</div>
+  <div class="hero-copy"><span class="eyebrow">FAST • FRESH • WOWFY</span><h1>Good food.<br><b>Great mood.</b></h1><p>Cravings? We've got your next favourite meal.</p>
+    <div class="search"><span class="search-icon">⌕</span><span>Search dishes, restaurants...</span><button>☷</button></div>
+  </div>
+  <div class="hero-art"><div class="plate">🍔</div><span class="spark s1">✦</span><span class="spark s2">✦</span><span class="mini">🍟</span></div>
 </section>
-<section class="section"><div class="section-head"><h2>Categories</h2><span>See all</span></div>
-<div class="categories">
-<button class="cat"><i>🍔</i><span>Burgers</span></button><button class="cat"><i>🍕</i><span>Pizza</span></button><button class="cat"><i>🍜</i><span>Noodles</span></button><button class="cat"><i>🍗</i><span>Chicken</span></button><button class="cat"><i>🥗</i><span>Healthy</span></button><button class="cat"><i>🍰</i><span>Dessert</span></button>
-</div></section>
-<section class="section"><div class="section-head"><h2>Popular near you</h2><span>See all</span></div>
-<div class="restaurants">
-<article class="restaurant"><div class="rest-img r1">🍔<label>20% OFF</label><button>♡</button></div><div class="rest-info"><h3>Burger House</h3><p>American • Burgers</p><div><b>★ 4.8</b><span> • 25 min • ₹₹</span></div></div></article>
-<article class="restaurant"><div class="rest-img r2">🍕<label>FREE DELIVERY</label><button>♡</button></div><div class="rest-info"><h3>Pizza Corner</h3><p>Italian • Pizza</p><div><b>★ 4.7</b><span> • 30 min • ₹₹</span></div></div></article>
-</div></section>
-<section class="section"><div class="section-head"><h2>Recommended for you</h2><span>See all</span></div>
-<div class="foods">
-<article class="food"><div class="food-img">🍔<button>♡</button></div><h3>Classic Smash Burger</h3><p>Fresh & delicious</p><strong>₹199</strong></article><article class="food"><div class="food-img">🍕<button>♡</button></div><h3>Pepperoni Pizza</h3><p>Fresh & delicious</p><strong>₹299</strong></article><article class="food"><div class="food-img">🍜<button>♡</button></div><h3>Spicy Ramen Bowl</h3><p>Fresh & delicious</p><strong>₹249</strong></article>
-</div></section>
+
+<section class="section">
+ <div class="section-head"><div><span class="kicker">EXPLORE</span><h2>What are you craving?</h2></div><span class="see">See all ›</span></div>
+ <div class="categories">
+  <button class="cat selected"><i>🍔</i><span>Burgers</span></button><button class="cat"><i>🍕</i><span>Pizza</span></button><button class="cat"><i>🍜</i><span>Noodles</span></button><button class="cat"><i>🍗</i><span>Chicken</span></button><button class="cat"><i>🥗</i><span>Healthy</span></button><button class="cat"><i>🍰</i><span>Dessert</span></button>
+ </div>
+</section>
+
+<section class="promo">
+ <div><span>WOWFY DEAL</span><h2>Hungry? Save 20% today.</h2><p>Use code <b>WOW20</b> on your first order</p><button>Order now <b>→</b></button></div><div class="promo-art">🍕</div>
+</section>
+
+<section class="section">
+ <div class="section-head"><div><span class="kicker">TOP PICKS</span><h2>Popular near you</h2></div><span class="see">See all ›</span></div>
+ <div class="restaurants">
+  <article class="restaurant"><div class="rest-img r1"><span class="dish">🍔</span><label>20% OFF</label><button>♡</button></div><div class="rest-info"><div class="rest-title"><h3>Burger House</h3><span class="open">● Open</span></div><p>American • Burgers • Fast Food</p><div class="meta"><b>★ 4.8</b><span>25 min</span><span>₹₹</span></div></div></article>
+  <article class="restaurant"><div class="rest-img r2"><span class="dish">🍕</span><label>FREE DELIVERY</label><button>♡</button></div><div class="rest-info"><div class="rest-title"><h3>Pizza Corner</h3><span class="open">● Open</span></div><p>Italian • Pizza • Pasta</p><div class="meta"><b>★ 4.7</b><span>30 min</span><span>₹₹</span></div></div></article>
+ </div>
+</section>
+
+<section class="section">
+ <div class="section-head"><div><span class="kicker">JUST FOR YOU</span><h2>Recommended dishes</h2></div><span class="see">See all ›</span></div>
+ <div class="foods">
+  <article class="food"><div class="food-img f1"><span>🍔</span><button>♡</button></div><h3>Classic Smash Burger</h3><p>Cheesy & juicy</p><strong>₹199</strong></article>
+  <article class="food"><div class="food-img f2"><span>🍕</span><button>♡</button></div><h3>Pepperoni Pizza</h3><p>Hot & cheesy</p><strong>₹299</strong></article>
+  <article class="food"><div class="food-img f3"><span>🍜</span><button>♡</button></div><h3>Spicy Ramen Bowl</h3><p>Rich & spicy</p><strong>₹249</strong></article>
+ </div>
+</section>
 </main>
-<nav class="bottom"><button class="active"><b>⌂</b><span>Home</span></button><button><b>⌕</b><span>Search</span></button><button><b>🛒</b><span>Cart</span><em>2</em></button><button><b>♡</b><span>Favorites</span></button><button><b>☺</b><span>Profile</span></button></nav>
-</div><script src="script.js"></script>
-</body></html>
+<nav class="bottom">
+ <button class="active"><b>⌂</b><span>Home</span></button><button><b>⌕</b><span>Search</span></button><button><b>🛒</b><span>Cart</span><em>2</em></button><button><b>♡</b><span>Favorites</span></button><button><b>☺</b><span>Profile</span></button>
+</nav>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
