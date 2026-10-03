@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Wowfy — Home</title>
+<style>
+:root{--orange:#ff5a1f;--orange2:#ff7a3d;--ink:#171717;--muted:#777;--bg:#f7f7f7;--card:#fff}
+*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+body{min-height:100vh}.wowfy-home{width:100%;max-width:480px;min-height:100vh;margin:auto;background:#fff;padding-bottom:92px}
+.header{padding:calc(14px + env(safe-area-inset-top)) 18px 12px;display:flex;align-items:center;justify-content:space-between}
+.delivery{display:flex;gap:10px;align-items:center}.pin{width:40px;height:40px;border-radius:14px;background:#fff0e8;display:grid;place-items:center;color:var(--orange);font-size:21px}
+.delivery small{display:block;color:#999;font-size:10px;margin-bottom:2px}.delivery strong{font-size:14px}.delivery strong span{color:var(--orange)}
+.avatar{width:40px;height:40px;border:0;border-radius:50%;background:var(--orange);color:#fff;font-weight:800}
+main{overflow:hidden}.hero{margin:8px 16px 24px;padding:21px 19px;border-radius:25px;background:linear-gradient(135deg,#fff0e7,#fff7f2);display:flex;align-items:center;justify-content:space-between;gap:8px;overflow:hidden}
+.hero p{margin:0 0 4px;color:var(--orange);font-size:13px;font-weight:800}.hero h1{font-size:29px;line-height:1.06;letter-spacing:-1.2px;margin:0 0 17px}.hero h1 b{color:var(--orange)}
+.search{height:47px;min-width:255px;background:#fff;border-radius:14px;display:flex;align-items:center;gap:9px;padding:0 13px;box-shadow:0 7px 20px #0000000a;color:#999;font-size:12px}
+.hero-art{font-size:84px;transform:rotate(-9deg);margin-right:-13px;filter:drop-shadow(0 10px 10px #0002)}
+.section{padding:0 16px;margin-bottom:27px}.section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}.section-head h2{font-size:18px;letter-spacing:-.4px;margin:0}.see{font-size:12px;color:var(--orange);font-weight:800}
+.row{display:flex;gap:12px;overflow:auto;scrollbar-width:none}.row::-webkit-scrollbar{display:none}
+.category{flex:0 0 70px;border:0;background:#fafafa;border-radius:17px;padding:9px 4px 10px;cursor:pointer}.category .ico{width:43px;height:43px;margin:auto;border-radius:13px;background:#fff;display:grid;place-items:center;font-size:23px}.category span{display:block;margin-top:7px;font-size:10.5px;font-weight:700}.category.active{background:#fff0e8;outline:1px solid #ffd4c1}.category.active span{color:var(--orange)}
+.rest{flex:0 0 260px;border:1px solid #eee;border-radius:19px;overflow:hidden;background:#fff;box-shadow:0 6px 22px #00000009}.rest-img{height:145px;position:relative;display:grid;place-items:center;font-size:72px}.r1{background:#ffe3c9}.r2{background:#ffe1dc}.r3{background:#e9f4df}.offer{position:absolute;top:10px;left:10px;background:var(--orange);color:#fff;border-radius:7px;padding:6px 8px;font-size:8px;font-weight:900}.heart{position:absolute;right:10px;top:10px;width:31px;height:31px;border:0;border-radius:50%;background:#fff;font-size:17px;cursor:pointer}.rest-info{padding:12px 13px 14px}.rest-info h3{margin:0 0 4px;font-size:15px}.rest-info p{margin:0 0 7px;color:#888;font-size:11px}.meta{font-size:11px}.meta b{color:#111}.meta span{color:#888}
+.food{flex:0 0 148px}.food-img{height:127px;border-radius:18px;display:grid;place-items:center;font-size:60px;position:relative;margin-bottom:9px}.f1{background:#fff0e7}.f2{background:#ffe9e4}.f3{background:#fff1d6}.food h3{font-size:13px;line-height:1.25;margin:0 0 4px}.food p{font-size:10.5px;color:#888;margin:0 0 5px}.price{font-size:14px}
+.promo{margin:0 16px 27px;border-radius:21px;padding:17px 18px;background:#171717;color:#fff;display:flex;justify-content:space-between;align-items:center;overflow:hidden}.promo small{color:#ffb08c;font-weight:800}.promo h3{margin:4px 0;font-size:18px}.promo p{margin:0;color:#bbb;font-size:10px}.promo-art{font-size:52px}
+.nav{position:fixed;z-index:20;bottom:0;left:50%;transform:translateX(-50%);width:min(480px,100%);height:74px;padding:7px 8px calc(7px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid #eee;display:flex;justify-content:space-around}
+.nav button{position:relative;min-width:56px;border:0;background:none;color:#999;font-size:9px;display:flex;flex-direction:column;align-items:center;gap:4px}.nav b{font-size:21px;font-weight:500;line-height:20px}.nav .active{color:var(--orange)}.badge{position:absolute;top:-2px;right:7px;background:var(--orange);color:#fff;border-radius:10px;padding:2px 5px;font-size:8px}
+@media(min-width:481px){body{padding:20px 0}.wowfy-home{border-radius:28px;overflow:hidden;box-shadow:0 12px 50px #0002}}
+</style>
+</head>
+<body>
+<div class="wowfy-home">
+<header class="header">
+  <div class="delivery"><div class="pin">⌖</div><div><small>Deliver to</small><strong>Home <span>⌄</span></strong></div></div>
+  <button class="avatar">W</button>
+</header>
+<main>
+<section class="hero"><div><p>Hungry?</p><h1>Good food,<br><b>good mood.</b></h1><div class="search">⌕ <span>Search food or restaurants</span></div></div><div class="hero-art">🍔</div></section>
+
+<section class="section"><div class="section-head"><h2>Categories</h2><span class="see">See all</span></div>
+<div class="row categories">
+<button class="category active"><i class="ico">🍔</i><span>Burgers</span></button><button class="category"><i class="ico">🍕</i><span>Pizza</span></button><button class="category"><i class="ico">🍜</i><span>Noodles</span></button><button class="category"><i class="ico">🍗</i><span>Chicken</span></button><button class="category"><i class="ico">🥗</i><span>Healthy</span></button><button class="category"><i class="ico">🍰</i><span>Dessert</span></button>
+</div></section>
+
+<section class="section"><div class="section-head"><h2>Popular near you</h2><span class="see">See all</span></div>
+<div class="row">
+<article class="rest"><div class="rest-img r1">🍔<label class="offer">20% OFF</label><button class="heart">♡</button></div><div class="rest-info"><h3>Burger House</h3><p>American • Burgers</p><div class="meta"><b>★ 4.8</b><span> • 25 min • ₹₹</span></div></div></article>
+<article class="rest"><div class="rest-img r2">🍕<label class="offer">FREE DELIVERY</label><button class="heart">♡</button></div><div class="rest-info"><h3>Pizza Corner</h3><p>Italian • Pizza</p><div class="meta"><b>★ 4.7</b><span> • 30 min • ₹₹</span></div></div></article>
+<article class="rest"><div class="rest-img r3">🥗<label class="offer">15% OFF</label><button class="heart">♡</button></div><div class="rest-info"><h3>Green Bowl</h3><p>Healthy • Bowls</p><div class="meta"><b>★ 4.6</b><span> • 20 min • ₹</span></div></div></article>
+</div></section>
+
+<div class="promo"><div><small>WOWFY DEAL</small><h3>20% OFF your first order</h3><p>Use code WOW20 at checkout</p></div><div class="promo-art">🍟</div></div>
+
+<section class="section"><div class="section-head"><h2>Recommended for you</h2><span class="see">See all</span></div>
+<div class="row">
+<article class="food"><div class="food-img f1">🍔<button class="heart">♡</button></div><h3>Classic Smash Burger</h3><p>Fresh & delicious</p><strong class="price">₹199</strong></article>
+<article class="food"><div class="food-img f2">🍕<button class="heart">♡</button></div><h3>Pepperoni Pizza</h3><p>Fresh & delicious</p><strong class="price">₹299</strong></article>
+<article class="food"><div class="food-img f3">🍜<button class="heart">♡</button></div><h3>Spicy Ramen Bowl</h3><p>Fresh & delicious</p><strong class="price">₹249</strong></article>
+</div></section>
+</main>
+
+<nav class="nav"><button class="active"><b>⌂</b><span>Home</span></button><button><b>⌕</b><span>Search</span></button><button><b>🛒</b><span>Cart</span><em class="badge">2</em></button><button><b>♡</b><span>Favorites</span></button><button><b>☺</b><span>Profile</span></button></nav>
+</div>
+<script>
+document.querySelectorAll('.category').forEach(x=>x.onclick=()=>{document.querySelectorAll('.category').forEach(y=>y.classList.remove('active'));x.classList.add('active')});
+document.querySelectorAll('.heart').forEach(x=>x.onclick=()=>x.textContent=x.textContent==='♡'?'♥':'♡');
+</script>
+</body></html>
