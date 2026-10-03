@@ -24,10 +24,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Build Wowfy website
+        run: npm run build:web
+
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: ./www
 
       - name: Deploy to GitHub Pages
         id: deployment
