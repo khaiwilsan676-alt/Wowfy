@@ -12,10 +12,10 @@ export default function FoodDeliveryUI() {
   // Toing (bounce) effect ke liye state
   const [isToing, setIsToing] = useState(false);
 
-  // TV IMAGE (Yeh hamesha fix rahegi, kabhi nahi hategi)
+  // TV IMAGE (Yeh hamesha fix rahegi, sabse aage frame banke)
   const tvBaseImage = `${import.meta.env.BASE_URL}assets/file_00000000f59c82119e801087b7277db9.png`;
   
-  // BURGER / FOOD IMAGES (Yeh dono TV ke upar change hongi)
+  // BURGER / FOOD IMAGES (Yeh TV ke PEECHE change hongi)
   const foodImages = [
     `${import.meta.env.BASE_URL}assets/file_000000006af88211ab3b298690553214.png`,
     `${import.meta.env.BASE_URL}assets/file_00000000b01482118ee1aa8d0c543de9.png`
@@ -96,24 +96,24 @@ export default function FoodDeliveryUI() {
             </button>
           </div>
 
-          {/* TV & Food Image Container - Ab TV hategi hi nahi! */}
-          <div className="w-1/2 flex justify-end translate-x-12 -translate-y-4 relative h-32 overflow-visible z-0">
+          {/* TV & Food Image Container */}
+          <div className="w-1/2 flex justify-end translate-x-12 -translate-y-4 relative h-32 overflow-visible z-0 pointer-events-none">
             
-            {/* 1. TV IMAGE - Ekdam fix, no animation, hamesha rahegi z-0 par */}
-            <img 
-              src={tvBaseImage} 
-              alt="Good Mood TV" 
-              className="absolute top-0 right-0 w-full h-full object-contain scale-[2.05] origin-right z-0" 
-            />
-
-            {/* 2. FOOD IMAGES - Yeh TV ke upar (z-10) aayengi aur 'Toing' karengi */}
+            {/* 1. FOOD IMAGES - Yeh ab TV ke PEECHE (z-0) aayengi aur 'Toing' karengi */}
             <img 
               src={foodImages[imgIndex]} 
               alt="Food Item" 
-              className={`absolute top-0 right-0 w-full h-full object-contain origin-right transition-transform duration-500 z-10 ${
-                isToing ? 'scale-[1.6]' : 'scale-[2.05]' // Toing pop effect
+              className={`absolute top-0 right-0 w-full h-full object-contain origin-right transition-transform duration-500 z-0 ${
+                isToing ? 'scale-[1.6]' : 'scale-[2.05]' // Toing pop effect TV ke andar
               }`} 
               style={{ transitionTimingFunction: 'cubic-bezier(0.5, 1.8, 0.4, 1)' }} // Spring Bounce Effect
+            />
+
+            {/* 2. TV IMAGE - Yeh ab AAGE (z-10) aa gayi hai, ekdam fix frame ki tarah */}
+            <img 
+              src={tvBaseImage} 
+              alt="Good Mood TV" 
+              className="absolute top-0 right-0 w-full h-full object-contain scale-[2.05] origin-right z-10" 
             />
 
           </div>
