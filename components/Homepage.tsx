@@ -52,38 +52,37 @@ export default function FoodDeliveryUI() {
           </div>
         </div>
 
-        {/* Hero Banner Area */}
-        <div className="flex justify-between items-center mt-6 pb-4">
-          <div className="w-3/5 z-10">
-            <div className="leading-[0.85]">
-              <h1 
-                className="text-4xl font-black text-yellow-400 drop-shadow-sm" 
-                style={{ WebkitTextStroke: '2.5px black' }}
-              >
-                Good Mood
-              </h1>
-              <h1 
-                className="text-[2.9rem] font-black text-white drop-shadow-sm whitespace-nowrap" 
-                style={{ WebkitTextStroke: '2.5px black' }}
-              >
-                Good Food
-              </h1>
-            </div>
-            <p className="text-gray-900 font-bold mt-1 text-[10px] border-b-2 border-gray-900 inline-block pb-0.5">
-              Dishes starting at ₹29
-            </p>\n            <button className="mt-2 bg-yellow-400 text-black font-extrabold text-[10px] py-1.5 px-3 rounded-full border-[2px] border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] animate-pulse">
-              ORDER NOW
-            </button>
+        {/* Hero Text */}
+        <div className="mt-4 pb-2">
+          <div className="leading-[0.85]">
+            <h1
+              className="text-[2.9rem] font-black text-white drop-shadow-sm whitespace-nowrap"
+              style={{ WebkitTextStroke: '2.5px black' }}
+            >
+              Good Mood
+            </h1>
+            <h1
+              className="text-[2.9rem] font-black text-white drop-shadow-sm whitespace-nowrap"
+              style={{ WebkitTextStroke: '2.5px black' }}
+            >
+              Good Food
+            </h1>
           </div>
-          
-          {/* TV Image Section - Used exact requested path */}
-          <div className="w-1/2 flex justify-end translate-x-12 -translate-y-4">
-            <img 
-              src={`${import.meta.env.BASE_URL}assets/file_00000000f59c82119e801087b7277db9.png`} 
-              alt="Good Mood Drop TV" 
-              className="w-full h-auto object-contain scale-[2.05] origin-right"
-            />
-          </div>
+          <p className="text-gray-900 font-bold mt-1 text-[10px] border-b-2 border-gray-900 inline-block pb-0.5">
+            Dishes starting at ₹29
+          </p>
+          <button className="mt-2 bg-yellow-400 text-black font-extrabold text-[10px] py-1.5 px-3 rounded-full border-[2px] border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] animate-pulse">
+            ORDER NOW
+          </button>
+        </div>
+
+        {/* TV Image — directly between search input and promo strip */}
+        <div className="relative h-36 overflow-visible flex justify-end items-start">
+          <img
+            src={`${import.meta.env.BASE_URL}assets/file_00000000f59c82119e801087b7277db9.png`}
+            alt="Good Mood TV"
+            className="absolute right-[-12px] top-[-18px] w-[58%] h-auto object-contain scale-[1.35] origin-top-right"
+          />
         </div>
       </div>
 
