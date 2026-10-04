@@ -57,13 +57,13 @@ export default function FoodDeliveryUI() {
           <div className="w-3/5 z-10">
             <div className="leading-[0.85]">
               <h1
-                className="text-[2.9rem] font-black text-yellow-400 drop-shadow-sm whitespace-nowrap"
+                className="text-[2.9rem] font-black text-yellow-400 drop-shadow-sm whitespace-nowrap scale-x-110 origin-left"
                 style={{ WebkitTextStroke: '2.5px black' }}
               >
                 Good Mood
               </h1>
               <h1
-                className="text-[2.9rem] font-black text-white drop-shadow-sm whitespace-nowrap"
+                className="text-[2.9rem] font-black text-white drop-shadow-sm whitespace-nowrap scale-x-110 origin-left"
                 style={{ WebkitTextStroke: '2.5px black' }}
               >
                 Good Food
