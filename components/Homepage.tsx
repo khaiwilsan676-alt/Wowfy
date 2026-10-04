@@ -103,7 +103,7 @@ export default function FoodDeliveryUI() {
             <img 
               src={foodImages[imgIndex]} 
               alt="Food Item" 
-              className={`absolute top-10 right-10 w-full h-full object-contain origin-right transition-transform duration-500 z-0 ${
+              className={`absolute top-10 right-10 w-full h-full object-contain origin-right transition-transform duration-500 z-10 ${
                 isToing ? 'scale-[1.3]' : 'scale-[1.5]' // Toing pop effect TV ke andar
               }`} 
               style={{ transitionTimingFunction: 'cubic-bezier(0.5, 1.8, 0.4, 1)' }} // Spring Bounce Effect
