@@ -75,7 +75,7 @@ export default function FoodDeliveryUI() {
           {/* TV Image Section - Used exact requested path */}
           <div className="w-2/5 flex justify-end">
             <img 
-              src="/assets/file_00000000f59c82119e801087b7277db9.png" 
+              src={`${import.meta.env.BASE_URL}assets/file_00000000f59c82119e801087b7277db9.png`} 
               alt="Weekend Drop TV" 
               className="w-full h-auto object-contain scale-110 origin-right"
             />
