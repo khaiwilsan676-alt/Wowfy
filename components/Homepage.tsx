@@ -26,16 +26,16 @@ export default function FoodDeliveryUI() {
           </div>
           <button className="text-gray-900 flex flex-col items-center justify-center gap-1" aria-label="Menu">
             <span className="flex items-center gap-1">
-              <span className="w-1.5 h-1.5 rounded-full bg-gray-900"></span>
-              <span className="w-6 h-1 rounded-full bg-gray-900"></span>
+              <span className="w-1 h-1 rounded-full bg-gray-900"></span>
+              <span className="w-5 h-0.5 rounded-full bg-gray-900"></span>
             </span>
             <span className="flex items-center gap-1">
-              <span className="w-1.5 h-1.5 rounded-full bg-gray-900"></span>
-              <span className="w-6 h-1 rounded-full bg-gray-900"></span>
+              <span className="w-1 h-1 rounded-full bg-gray-900"></span>
+              <span className="w-5 h-0.5 rounded-full bg-gray-900"></span>
             </span>
             <span className="flex items-center gap-1">
-              <span className="w-1.5 h-1.5 rounded-full bg-gray-900"></span>
-              <span className="w-6 h-1 rounded-full bg-gray-900"></span>
+              <span className="w-1 h-1 rounded-full bg-gray-900"></span>
+              <span className="w-5 h-0.5 rounded-full bg-gray-900"></span>
             </span>
           </button>
         </div>
