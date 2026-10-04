@@ -96,117 +96,79 @@ export default function FoodDeliveryUI() {
         <span className="text-teal-600 text-xs bg-transparent">✨</span>
       </div>
 
-      {/* CATEGORIES */}
-      <div className="bg-white pt-5 pb-3 border-b border-gray-100">
-        <div className="flex gap-3 px-4 overflow-x-auto no-scrollbar">
-          {/* Active Category */}
-          <div className="flex flex-col items-center gap-2 min-w-[72px] cursor-pointer">
-            <div className="w-[68px] h-[68px] bg-gradient-to-br from-pink-50 to-orange-50 rounded-[1.35rem] flex justify-center items-center shadow-[0_5px_16px_rgba(0,0,0,0.08)] border border-white">
-               {/* Placeholder for 'All' collage graphic */}
-               <div className="grid grid-cols-2 gap-0.5 w-10 h-10 rounded-full overflow-hidden">
-                  <div className="bg-orange-300"></div>
-                  <div className="bg-yellow-300"></div>
-                  <div className="bg-green-300"></div>
-                  <div className="bg-red-300"></div>
-               </div>
-            </div>
-            <span className="font-bold text-xs text-gray-900">All</span>
+      {/* PREMIUM DISCOVERY */}
+      <section className="bg-white px-4 pt-5 pb-3">
+        <div className="flex items-center justify-between mb-4">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-orange-500">Explore</p>
+            <h2 className="text-xl font-black text-gray-900 tracking-tight">What are you craving?</h2>
           </div>
-
-          {/* Other Categories */}
-          {[
-            { name: 'Rolls', price: '₹69' },
-            { name: 'Burgers', price: '₹49' },
-            { name: 'Momos', price: '₹69' }
-          ].map((cat, i) => (
-            <div key={i} className="flex flex-col items-center gap-2 min-w-[72px] cursor-pointer">
-              <div className="w-[68px] h-[68px] bg-white border border-gray-100 rounded-[1.35rem] flex flex-col justify-end items-center relative overflow-hidden shadow-[0_5px_16px_rgba(0,0,0,0.07)]">
-                <div className="w-10 h-10 bg-gray-200 rounded-full mb-3"></div> {/* Image Placeholder */}
-                <div className="absolute bottom-0 w-full bg-pink-500 text-white text-[9px] font-bold text-center py-0.5">
-                  FROM {cat.price}
-                </div>
-              </div>
-              <span className="font-semibold text-xs text-gray-600">{cat.name}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* MEALS SECTION */}
-      <div className="bg-gray-50 p-4 pt-7 mt-1">
-        <div className="flex justify-between items-center mb-5">
-          <h2 className="text-xl font-black text-gray-900 tracking-tight">Meals under ₹99</h2>
-          <button className="text-gray-500 text-xs font-semibold flex items-center">
-            See All <ChevronRight size={14} className="ml-0.5" />
+          <button className="h-9 w-9 rounded-full bg-gray-900 text-white flex items-center justify-center shadow-lg">
+            <ChevronRight size={17} />
           </button>
         </div>
 
-        <div className="flex gap-4 overflow-x-auto no-scrollbar pb-6">
-          {/* Card 1 */}
-          <div className="min-w-[150px] bg-white rounded-2xl overflow-visible border border-gray-100 shadow-[0_6px_20px_rgba(0,0,0,0.06)]">
-            <div className="relative h-28 bg-gray-800 rounded-2xl mb-4">
-              {/* Product Image Placeholder */}
-              <div className="absolute top-2 left-2 bg-white text-green-700 text-[10px] font-extrabold px-1.5 py-0.5 rounded shadow-sm">
-                Popular
-              </div>
-              <button className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white text-pink-500 rounded-full w-9 h-9 flex justify-center items-center shadow-[0_2px_8px_rgba(0,0,0,0.15)] hover:scale-105 transition-transform">
-                <Plus size={20} strokeWidth={3} />
-              </button>
+        <div className="flex gap-3 overflow-x-auto no-scrollbar pb-2">
+          <div className="min-w-[92px] rounded-2xl bg-gradient-to-br from-orange-50 to-yellow-50 border border-orange-100 p-3 shadow-sm">
+            <div className="h-14 rounded-xl bg-white shadow-sm flex items-center justify-center text-2xl">🍔</div>
+            <p className="mt-2 text-xs font-black text-gray-900">Burgers</p>
+            <p className="text-[9px] text-gray-500 font-semibold">From ₹49</p>
+          </div>
+          <div className="min-w-[92px] rounded-2xl bg-gradient-to-br from-pink-50 to-rose-50 border border-pink-100 p-3 shadow-sm">
+            <div className="h-14 rounded-xl bg-white shadow-sm flex items-center justify-center text-2xl">🥟</div>
+            <p className="mt-2 text-xs font-black text-gray-900">Momos</p>
+            <p className="text-[9px] text-gray-500 font-semibold">From ₹69</p>
+          </div>
+          <div className="min-w-[92px] rounded-2xl bg-gradient-to-br from-yellow-50 to-amber-50 border border-yellow-100 p-3 shadow-sm">
+            <div className="h-14 rounded-xl bg-white shadow-sm flex items-center justify-center text-2xl">🌯</div>
+            <p className="mt-2 text-xs font-black text-gray-900">Rolls</p>
+            <p className="text-[9px] text-gray-500 font-semibold">From ₹69</p>
+          </div>
+          <div className="min-w-[92px] rounded-2xl bg-gradient-to-br from-green-50 to-emerald-50 border border-green-100 p-3 shadow-sm">
+            <div className="h-14 rounded-xl bg-white shadow-sm flex items-center justify-center text-2xl">🍟</div>
+            <p className="mt-2 text-xs font-black text-gray-900">Snacks</p>
+            <p className="text-[9px] text-gray-500 font-semibold">From ₹29</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-gray-50 px-4 pt-5 pb-7">
+        <div className="flex items-end justify-between mb-4">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-orange-500">Best picks</p>
+            <h2 className="text-xl font-black text-gray-900">Meals under ₹99</h2>
+          </div>
+          <button className="text-xs font-bold text-orange-600 flex items-center">See All <ChevronRight size={15}/></button>
+        </div>
+
+        <div className="grid grid-cols-2 gap-3">
+          <div className="bg-white rounded-[22px] overflow-hidden border border-gray-100 shadow-[0_8px_24px_rgba(0,0,0,0.07)]">
+            <div className="h-32 bg-gradient-to-br from-gray-200 via-gray-100 to-gray-300 relative">
+              <span className="absolute top-2 left-2 bg-gray-900 text-white text-[9px] font-black px-2 py-1 rounded-full">POPULAR</span>
+              <button className="absolute right-2 bottom-2 w-9 h-9 rounded-full bg-white text-orange-500 flex items-center justify-center shadow-lg active:scale-90 transition-transform"><Plus size={19} strokeWidth={3}/></button>
             </div>
-            
-            <div className="pt-2 px-1">
-              <div className="flex items-center gap-0.5 text-[10px] font-bold text-green-700 bg-green-50 w-max px-1.5 py-0.5 rounded mb-1.5">
-                <Star size={10} fill="currentColor" /> 4.9
-              </div>
-              <p className="text-[11px] text-gray-500 truncate font-medium">BOOM - Sub Style Sa...</p>
-              <p className="font-bold text-sm leading-tight mt-0.5 text-gray-900 h-10">
-                Veggie Delight Sub-Sandwich
-              </p>
-              <div className="flex items-center gap-1.5 mt-1">
-                <span className="text-gray-400 text-[11px] font-medium line-through">₹199</span>
-                <span className="font-extrabold text-sm text-gray-900">₹99</span>
-              </div>
-              <div className="mt-2 inline-flex items-center gap-1 border border-pink-100 bg-pink-50/50 rounded px-1.5 py-0.5">
-                <span className="text-pink-500 text-[10px]">&hearts;</span>
-                <span className="text-[9px] text-pink-600 font-bold">Our app: 50% lower</span>
-              </div>
+            <div className="p-3">
+              <div className="flex items-center gap-1 text-[9px] font-black text-green-700"><Star size={10} fill="currentColor"/> 4.9 <span className="text-gray-300">•</span> Fast</div>
+              <p className="text-[10px] text-gray-500 mt-1">BOOM - Sub Style Sa...</p>
+              <p className="text-sm font-black text-gray-900 leading-tight mt-1">Veggie Delight Sub-Sandwich</p>
+              <div className="mt-2 flex items-center gap-2"><span className="text-[10px] text-gray-400 line-through">₹199</span><span className="text-base font-black text-gray-900">₹99</span></div>
             </div>
           </div>
 
-          {/* Card 2 */}
-          <div className="min-w-[150px] bg-white rounded-2xl overflow-visible">
-            <div className="relative h-28 bg-gray-800 rounded-2xl mb-4">
-              <div className="absolute top-2 left-2 bg-white text-green-700 text-[10px] font-extrabold px-1.5 py-0.5 rounded shadow-sm">
-                Popular
-              </div>
-              <button className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white text-pink-500 rounded-full w-9 h-9 flex justify-center items-center shadow-[0_2px_8px_rgba(0,0,0,0.15)] hover:scale-105 transition-transform">
-                <Plus size={20} strokeWidth={3} />
-              </button>
+          <div className="bg-white rounded-[22px] overflow-hidden border border-gray-100 shadow-[0_8px_24px_rgba(0,0,0,0.07)]">
+            <div className="h-32 bg-gradient-to-br from-gray-200 via-gray-100 to-gray-300 relative">
+              <span className="absolute top-2 left-2 bg-gray-900 text-white text-[9px] font-black px-2 py-1 rounded-full">POPULAR</span>
+              <button className="absolute right-2 bottom-2 w-9 h-9 rounded-full bg-white text-orange-500 flex items-center justify-center shadow-lg active:scale-90 transition-transform"><Plus size={19} strokeWidth={3}/></button>
             </div>
-            
-            <div className="pt-2 px-1">
-              <div className="flex items-center gap-0.5 text-[10px] font-bold text-gray-600 bg-gray-100 w-max px-1.5 py-0.5 rounded mb-1.5">
-                <Star size={10} fill="currentColor" /> 4.2
-              </div>
-              <p className="text-[11px] text-gray-500 truncate font-medium">Just Baked</p>
-              <p className="font-bold text-sm leading-tight mt-0.5 text-gray-900 h-10">
-                <span className="inline-block w-3 h-3 border border-red-500 rounded-sm mr-1 relative top-0.5">
-                   <span className="absolute inset-0 m-auto w-1.5 h-1.5 bg-red-500 rounded-full"></span>
-                </span>
-                Chicken Burger
-              </p>
-              <div className="flex items-center gap-1.5 mt-1">
-                <span className="text-gray-400 text-[11px] font-medium line-through">₹80</span>
-                <span className="font-extrabold text-sm text-gray-900">₹58</span>
-              </div>
-              <div className="mt-2 inline-flex items-center gap-1 border border-pink-100 bg-pink-50/50 rounded px-1.5 py-0.5">
-                <span className="text-pink-500 text-[10px]">&hearts;</span>
-                <span className="text-[9px] text-pink-600 font-bold">Our app: 40% lower</span>
-              </div>
+            <div className="p-3">
+              <div className="flex items-center gap-1 text-[9px] font-black text-green-700"><Star size={10} fill="currentColor"/> 4.2 <span className="text-gray-300">•</span> Fast</div>
+              <p className="text-[10px] text-gray-500 mt-1">Just Baked</p>
+              <p className="text-sm font-black text-gray-900 leading-tight mt-1">Chicken Burger</p>
+              <div className="mt-2 flex items-center gap-2"><span className="text-[10px] text-gray-400 line-through">₹80</span><span className="text-base font-black text-gray-900">₹58</span></div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }
