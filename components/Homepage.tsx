@@ -8,6 +8,8 @@ export default function FoodDeliveryUI() {
   const [isClicked, setIsClicked] = useState(false);
   // Images change hone ke liye state
   const [imgIndex, setImgIndex] = useState(0);
+  // Toing (bounce) effect ke liye state
+  const [isToing, setIsToing] = useState(false);
 
   const tvImages = [
     `${import.meta.env.BASE_URL}assets/file_00000000f59c82119e801087b7277db9.png`,
@@ -17,13 +19,17 @@ export default function FoodDeliveryUI() {
 
   useEffect(() => {
     const interval = window.setInterval(() => {
-      // Button auto-click ka Toing effect
+      // Button dabne ka visual effect
       setIsClicked(true);
       orderButtonRef.current?.click();
       setTimeout(() => setIsClicked(false), 150);
 
-      // Har 3 second mein nayi image aayegi (Toing app style)
-      setImgIndex((prev) => (prev + 1) % tvImages.length);
+      // Image change aur Toing (Bounce) effect start
+      setIsToing(true);
+      setImgIndex((prev) => (prev + 1) % tvImages.length); // Image instantly change hogi (gayab nahi hogi)
+      
+      // Thodi der baad wapas normal size pe aane ka bounce effect
+      setTimeout(() => setIsToing(false), 300); 
     }, 3000);
     
     return () => window.clearInterval(interval);
@@ -86,29 +92,23 @@ export default function FoodDeliveryUI() {
             </button>
           </div>
 
-          {/* TV Image Container - z-0 taaki ye patti aur input ke beech daba rahe */}
+          {/* TV Image Container - Ab yeh gayab nahi hogi! */}
           <div className="w-1/2 flex justify-end translate-x-12 -translate-y-4 relative h-32 overflow-visible z-0">
-            {tvImages.map((src, index) => {
-              const isActive = index === imgIndex;
-              return (
-                <img 
-                  key={index}
-                  src={src} 
-                  alt={`Good Mood TV ${index}`} 
-                  // Koi sliding nahi! Image bas apni jagah par ekdam 'Toing' (pop-bounce) karegi!
-                  className={`absolute top-0 right-0 w-full h-full object-contain origin-right transition-all duration-500 ${
-                    isActive ? 'scale-[2.05] opacity-100 z-10' : 'scale-[1.7] opacity-0 z-0'
-                  }`} 
-                  // Ekdam real Toing app jaisa bouncy spring effect
-                  style={{ transitionTimingFunction: 'cubic-bezier(0.5, 1.5, 0.4, 1)' }} 
-                />
-              );
-            })}
+            {/* Sirf 1 image tag rakha hai taaki gayab hone ka chance hi na rahe */}
+            <img 
+              src={tvImages[imgIndex]} 
+              alt="Good Mood TV" 
+              // Jab Toing effect chalega toh thodi chhoti hoke fir 2.05 pe uchhal ke wapas aayegi
+              className={`absolute top-0 right-0 w-full h-full object-contain origin-right transition-transform duration-500 ${
+                isToing ? 'scale-[1.5]' : 'scale-[2.05]'
+              }`} 
+              style={{ transitionTimingFunction: 'cubic-bezier(0.5, 1.8, 0.4, 1)' }} // Spring Bounce Effect
+            />
           </div>
         </div>
       </div>
 
-      {/* ₹25 Free Cash Banner - Isko bhi z-20 diya taaki TV image iske upar na chadhe */}
+      {/* ₹25 Free Cash Banner - Isko z-20 diya taaki TV image iske upar na chadhe */}
       <div className="bg-yellow-400 w-full py-1.5 text-center flex items-center justify-center gap-2 relative z-20 shadow-sm">
         <span className="text-teal-600 text-xs bg-transparent">✨</span>
         <span className="text-black font-bold text-[11px] tracking-wide">GET ADDITIONAL ₹25 FREE CASH</span>
