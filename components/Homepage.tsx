@@ -57,7 +57,7 @@ export default function FoodDeliveryUI() {
           <div className="w-3/5 z-10">
             <div className="leading-[0.85]">
               <h1
-                className="text-[2.9rem] font-black text-yellow-400 drop-shadow-sm whitespace-nowrap scale-x-105 origin-left"
+                className="text-[2.9rem] font-black text-yellow-400 drop-shadow-sm whitespace-nowrap scale-x-100 origin-left"
                 style={{ WebkitTextStroke: '2.5px black' }}
               >
                 Good Mood
@@ -72,7 +72,7 @@ export default function FoodDeliveryUI() {
             <p className="text-gray-900 font-bold mt-1 text-[10px] border-b-2 border-gray-900 inline-block pb-0.5">
               Dishes starting at ₹29
             </p>
-            <button className="mt-3 bg-yellow-400 text-black font-extrabold text-[9px] py-1 px-5 rounded-full border-[2px] border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:scale-90 transition-transform whitespace-nowrap w-max">
+            <button className="mt-3 bg-yellow-400 text-black font-extrabold text-[9px] py-1 px-3 rounded-full border-[2px] border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:scale-90 transition-transform whitespace-nowrap w-max">
               ORDER NOW
             </button>
           </div>
