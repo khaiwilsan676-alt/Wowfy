@@ -55,13 +55,13 @@ export default function FoodDeliveryUI() {
                 className="text-4xl font-black text-yellow-400 drop-shadow-sm" 
                 style={{ WebkitTextStroke: '1.5px black' }}
               >
-                Weekend
+                Good Mood
               </h1>
               <h1 
                 className="text-[2.7rem] font-black text-white drop-shadow-sm" 
                 style={{ WebkitTextStroke: '1.5px black' }}
               >
-                DROP
+                Good Food
               </h1>
             </div>
             <p className="text-gray-900 font-bold mt-2 text-xs border-b-2 border-gray-900 inline-block pb-0.5">
@@ -76,7 +76,7 @@ export default function FoodDeliveryUI() {
           <div className="w-2/5 flex justify-end">
             <img 
               src={`${import.meta.env.BASE_URL}assets/file_00000000f59c82119e801087b7277db9.png`} 
-              alt="Weekend Drop TV" 
+              alt="Good Mood Drop TV" 
               className="w-full h-auto object-contain scale-110 origin-right"
             />
           </div>
