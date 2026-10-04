@@ -6,34 +6,19 @@ export default function FoodDeliveryUI() {
   
   // Auto-click effect ke liye state
   const [isClicked, setIsClicked] = useState(false);
-  
-  // Sirf Food images change hone ke liye state
-  const [imgIndex, setImgIndex] = useState(0);
-  // Toing (bounce) effect ke liye state
-  const [isToing, setIsToing] = useState(false);
 
-  // TV IMAGE (Yeh hamesha fix rahegi, sabse aage frame banke)
+  // TV IMAGE (Frame sabse aage rahega)
   const tvBaseImage = `${import.meta.env.BASE_URL}assets/file_00000000f59c82119e801087b7277db9.png`;
   
-  // BURGER / FOOD IMAGES (Yeh TV ke PEECHE change hongi)
-  const foodImages = [
-    `${import.meta.env.BASE_URL}assets/file_000000006af88211ab3b298690553214.png`,
-    `${import.meta.env.BASE_URL}assets/file_00000000b01482118ee1aa8d0c543de9.png`
-  ];
+  // VIDEO (Jo TV ke andar chalega)
+  const tvVideo = `${import.meta.env.BASE_URL}assets/gemini_generated_video_5f00f6e1.mp4`;
 
   useEffect(() => {
+    // Sirf Button auto-click ka logic bacha hai, video apne aap HTML5 autoPlay se chalegi
     const interval = window.setInterval(() => {
-      // Button dabne ka Toing effect
       setIsClicked(true);
       orderButtonRef.current?.click();
       setTimeout(() => setIsClicked(false), 150);
-
-      // Food image change aur Toing (Bounce) effect start
-      setIsToing(true);
-      setImgIndex((prev) => (prev + 1) % foodImages.length);
-      
-      // Thodi der baad wapas normal size pe aane ka bounce effect
-      setTimeout(() => setIsToing(false), 300); 
     }, 3000);
     
     return () => window.clearInterval(interval);
@@ -80,8 +65,8 @@ export default function FoodDeliveryUI() {
           {/* Text & Button Container */}
           <div className="w-3/5 relative z-20">
             <div className="leading-[0.85]">
-              <h1 className="text-[2.9rem] font-black text-yellow-400 drop-shadow-sm whitespace-nowrap scale-x-75 origin-left" style={{ WebkitTextStroke: '3.5px black' }}>Good Food</h1>
-              <h1 className="text-[2.9rem] font-black text-white drop-shadow-sm whitespace-nowrap scale-x-75 origin-left" style={{ WebkitTextStroke: '3.5px black' }}>Good Mood</h1>
+              <h1 className="text-[2.9rem] font-black text-yellow-400 drop-shadow-sm whitespace-nowrap scale-x-75 origin-left" style={{ WebkitTextStroke: '3.5px black' }}>Good Mood</h1>
+              <h1 className="text-[2.9rem] font-black text-white drop-shadow-sm whitespace-nowrap scale-x-75 origin-left" style={{ WebkitTextStroke: '3.5px black' }}>Good Food</h1>
             </div>
             <p className="text-gray-900 font-bold mt-1 text-[10px] border-b-2 border-gray-900 inline-block pb-0.5">Dishes starting at ₹29</p>
             <button 
@@ -96,20 +81,21 @@ export default function FoodDeliveryUI() {
             </button>
           </div>
 
-          {/* TV & Food Image Container */}
+          {/* TV & Video Container */}
           <div className="w-1/2 flex justify-end translate-x-12 -translate-y-4 relative h-32 overflow-visible z-0 pointer-events-none">
             
-            {/* 1. FOOD IMAGES - Yeh ab TV ke PEECHE (z-0) aayengi aur 'Toing' karengi */}
-            <img 
-              src={foodImages[imgIndex]} 
-              alt="Food Item" 
-              className={`absolute top-10 right-10 w-full h-full object-contain origin-right transition-transform duration-500 z-10 ${
-                isToing ? 'scale-[1.3]' : 'scale-[1.5]' // Toing pop effect TV ke andar
-              }`} 
-              style={{ transitionTimingFunction: 'cubic-bezier(0.5, 1.8, 0.4, 1)' }} // Spring Bounce Effect
+            {/* 1. VIDEO - Yeh TV frame ke PEECHE (z-0) autoplay hogi */}
+            <video 
+              src={tvVideo}
+              autoPlay
+              loop
+              muted
+              playsInline
+              // Scale 1.85 rakha hai taaki TV screen ke andar fit aaye (agar chota/bada karna ho toh isko change karlena)
+              className="absolute top-0 right-0 w-full h-full object-contain origin-right z-0 scale-[1.85]" 
             />
 
-            {/* 2. TV IMAGE - Yeh ab AAGE (z-10) aa gayi hai, ekdam fix frame ki tarah */}
+            {/* 2. TV IMAGE FRAME - Yeh video ke AAGE (z-10) rahegi ekdam fix */}
             <img 
               src={tvBaseImage} 
               alt="Good Mood TV" 
@@ -120,7 +106,7 @@ export default function FoodDeliveryUI() {
         </div>
       </div>
 
-      {/* ₹25 Free Cash Banner - Isko z-20 diya taaki TV image iske upar na chadhe */}
+      {/* ₹25 Free Cash Banner */}
       <div className="bg-yellow-400 w-full py-1.5 text-center flex items-center justify-center gap-2 relative z-20 shadow-sm">
         <span className="text-teal-600 text-xs bg-transparent">✨</span>
         <span className="text-black font-bold text-[11px] tracking-wide">GET ADDITIONAL ₹25 FREE CASH</span>
