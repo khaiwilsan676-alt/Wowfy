@@ -1,20 +1,42 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Search, ChevronDown, ChevronRight, Star, Plus } from 'lucide-react';
 
 export default function FoodDeliveryUI() {
   const orderButtonRef = useRef<HTMLButtonElement>(null);
+  
+  // Auto-click effect ke liye state
+  const [isClicked, setIsClicked] = useState(false);
+  // Images slide hone ke liye state
+  const [imgIndex, setImgIndex] = useState(0);
+
+  const tvImages = [
+    `${import.meta.env.BASE_URL}assets/file_00000000f59c82119e801087b7277db9.png`,
+    `${import.meta.env.BASE_URL}assets/file_000000006af88211ab3b298690553214.png`,
+    `${import.meta.env.BASE_URL}assets/file_00000000b01482118ee1aa8d0c543de9.png`
+  ];
 
   useEffect(() => {
+    // Image aur Button dono ka interval 3 seconds pe set kiya hai
     const interval = window.setInterval(() => {
+      // Button dabne ka visual effect
+      setIsClicked(true);
       orderButtonRef.current?.click();
+      setTimeout(() => setIsClicked(false), 150);
+
+      // Next image side se aane ke liye update
+      setImgIndex((prev) => (prev + 1) % tvImages.length);
     }, 3000);
+    
     return () => window.clearInterval(interval);
   }, []);
 
   return (
     <div className="max-w-md mx-auto bg-gray-50 min-h-screen font-sans overflow-hidden">
-      <div className="bg-orange-500 px-4 pt-4 pb-2">
-        <div className="flex justify-between items-center">
+      {/* Orange Background Section */}
+      <div className="bg-orange-500 px-4 pt-4 pb-2 relative">
+        
+        {/* Top Header */}
+        <div className="flex justify-between items-center relative z-20">
           <div className="flex items-center gap-3">
             <div className="bg-yellow-400 p-2 rounded-full flex justify-center items-center h-10 w-10">
               <svg viewBox="0 0 24 24" fill="black" className="w-5 h-5">
@@ -35,32 +57,64 @@ export default function FoodDeliveryUI() {
           </button>
         </div>
 
-        <div className="mt-5">
+        {/* Search Input - Isko z-20 diya hai taaki TV image iske neeche rahe */}
+        <div className="mt-5 relative z-20">
           <div className="bg-white rounded-2xl p-3 flex items-center gap-2 shadow-sm">
             <Search size={20} className="text-gray-400" />
             <input type="text" placeholder="Search for 'Fries'" className="w-full outline-none text-gray-700 font-medium placeholder-gray-400 text-sm" />
           </div>
         </div>
 
-        <div className="flex justify-between items-center mt-6 pb-4">
-          <div className="w-3/5 z-10">
+        {/* Main Banner Text & Image Section */}
+        <div className="flex justify-between items-center mt-6 pb-4 relative z-0">
+          
+          {/* Text & Button Container - z-20 taaki text image ke upar rahe */}
+          <div className="w-3/5 relative z-20">
             <div className="leading-[0.85]">
-              <h1 className="text-[2.9rem] font-black text-yellow-400 drop-shadow-sm whitespace-nowrap scale-x-80 origin-left" style={{ WebkitTextStroke: '2.5px black' }}>Good Mood</h1>
-              <h1 className="text-[2.9rem] font-black text-white drop-shadow-sm whitespace-nowrap scale-x-90 origin-left" style={{ WebkitTextStroke: '2.5px black' }}>Good Food</h1>
+              <h1 className="text-[2.9rem] font-black text-yellow-400 drop-shadow-sm whitespace-nowrap scale-x-75 origin-left" style={{ WebkitTextStroke: '3.5px black' }}>Good Mood</h1>
+              <h1 className="text-[2.9rem] font-black text-white drop-shadow-sm whitespace-nowrap scale-x-75 origin-left" style={{ WebkitTextStroke: '3.5px black' }}>Good Food</h1>
             </div>
             <p className="text-gray-900 font-bold mt-1 text-[10px] border-b-2 border-gray-900 inline-block pb-0.5">Dishes starting at ₹29</p>
-            <button ref={orderButtonRef} className="mt-3 bg-yellow-400 text-black font-extrabold text-[9px] py-1 px-2.5 rounded-full border-[2px] border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:scale-90 transition-transform whitespace-nowrap w-max">
+            <button 
+              ref={orderButtonRef} 
+              className={`mt-3 bg-yellow-400 text-black font-extrabold text-[9px] py-1 px-2.5 rounded-full border-[2px] border-black transition-all whitespace-nowrap w-max ${
+                isClicked 
+                  ? 'scale-90 shadow-none translate-y-[2px]' 
+                  : 'shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]'
+              }`}
+            >
               ORDER NOW
             </button>
           </div>
 
-          <div className="w-1/2 flex justify-end translate-x-12 -translate-y-4">
-            <img src={`${import.meta.env.BASE_URL}assets/file_00000000f59c82119e801087b7277db9.png`} alt="Good Mood TV" className="w-full h-auto object-contain scale-[2.05] origin-right" />
+          {/* TV Image Container - z-0 taaki ye input aur patti ke beech daba rahe */}
+          <div className="w-1/2 flex justify-end translate-x-12 -translate-y-4 relative h-32 overflow-visible z-0">
+            {tvImages.map((src, index) => {
+              let positionClass = '';
+              if (index === imgIndex) {
+                positionClass = 'translate-x-0 opacity-100 z-10'; // Jo screen pe hai
+              } else if (index === (imgIndex - 1 + tvImages.length) % tvImages.length) {
+                positionClass = '-translate-x-[150%] opacity-0 z-0'; // Jo jaa chuki hai (Left side)
+              } else {
+                positionClass = 'translate-x-[150%] opacity-0 z-0'; // Jo aane wali hai (Right side se)
+              }
+
+              return (
+                <img 
+                  key={index}
+                  src={src} 
+                  alt={`Good Mood TV ${index}`} 
+                  className={`absolute top-0 right-0 w-full h-full object-contain scale-[2.05] origin-right transition-all duration-700 ${positionClass}`} 
+                  style={{ transitionTimingFunction: 'cubic-bezier(0.34, 1.56, 0.64, 1)' }} // "Toing" effect wala spring bounce
+                />
+              );
+            })}
           </div>
         </div>
       </div>
 
-      <div className="bg-yellow-400 w-full py-1.5 text-center flex items-center justify-center gap-2">
+      {/* ₹25 Free Cash Banner - Isko relative z-20 de diya taaki TV image iske bhi neeche (peeche) rahe */}
+      <div className="bg-yellow-400 w-full py-1.5 text-center flex items-center justify-center gap-2 relative z-20 shadow-sm">
         <span className="text-teal-600 text-xs bg-transparent">✨</span>
         <span className="text-black font-bold text-[11px] tracking-wide">GET ADDITIONAL ₹25 FREE CASH</span>
         <span className="text-teal-600 text-xs bg-transparent">✨</span>
