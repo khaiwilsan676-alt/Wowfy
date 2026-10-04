@@ -63,15 +63,15 @@ export default function FoodDeliveryUI() {
                 Good Mood
               </h1>
               <h1 
-                className="text-4xl font-black text-yellow-400 drop-shadow-sm whitespace-nowrap" 
+                className="text-[2.6rem] font-black text-yellow-400 drop-shadow-sm whitespace-nowrap" 
                 style={{ WebkitTextStroke: '2.5px black' }}
               >
                 Good Food
               </h1>
             </div>
-            <p className="text-gray-900 font-bold mt-2 text-xs border-b-2 border-gray-900 inline-block pb-0.5">
+            <p className="text-gray-900 font-bold mt-1 text-[10px] border-b-2 border-gray-900 inline-block pb-0.5">
               Dishes starting at ₹29
-            </p>\n            <button className="mt-3 bg-yellow-400 text-black font-extrabold text-xs py-2 px-4 rounded-full border-[3px] border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+            </p>\n            <button className="mt-2 bg-yellow-400 text-black font-extrabold text-[10px] py-1.5 px-3 rounded-full border-[2px] border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] animate-pulse">
               ORDER NOW
             </button>
           </div>
