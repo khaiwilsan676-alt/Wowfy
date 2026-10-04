@@ -91,7 +91,7 @@ export default function FoodDeliveryUI() {
               loop
               muted
               playsInline
-              className="absolute top-0 right-0 w-full h-full object-contain origin-right z-0 scale-[1.85] -rotate-[3deg]" 
+              className="absolute top-0 right-0 w-full h-full object-contain origin-right z-0 scale-[1.60] -rotate-[6deg]" 
             />
 
             {/* 2. TV IMAGE FRAME - Video ke AAGE (z-10) */}
