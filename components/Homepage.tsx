@@ -58,7 +58,7 @@ export default function FoodDeliveryUI() {
                 Good Mood
               </h1>
               <h1 
-                className="text-[2.7rem] font-black text-white drop-shadow-sm" 
+                className="text-[2.7rem] font-black text-white drop-shadow-sm whitespace-nowrap" 
                 style={{ WebkitTextStroke: '1.5px black' }}
               >
                 Good Food
