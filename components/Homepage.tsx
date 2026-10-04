@@ -72,7 +72,7 @@ export default function FoodDeliveryUI() {
             <p className="text-gray-900 font-bold mt-1 text-[10px] border-b-2 border-gray-900 inline-block pb-0.5">
               Dishes starting at ₹29
             </p>
-            <button className="mt-2 bg-yellow-400 text-black font-extrabold text-[10px] py-1.5 px-3 rounded-full border-[2px] border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] animate-pulse">
+            <button className="mt-3 bg-yellow-400 text-black font-extrabold text-[9px] py-1 px-5 rounded-full border-[2px] border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] animate-bounce whitespace-nowrap w-max">
               ORDER NOW
             </button>
           </div>
