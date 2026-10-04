@@ -97,11 +97,11 @@ export default function FoodDeliveryUI() {
       </div>
 
       {/* CATEGORIES */}
-      <div className="bg-white pt-4 pb-2">
-        <div className="flex gap-4 px-4 overflow-x-auto no-scrollbar">
+      <div className="bg-white pt-5 pb-3 border-b border-gray-100">
+        <div className="flex gap-3 px-4 overflow-x-auto no-scrollbar">
           {/* Active Category */}
           <div className="flex flex-col items-center gap-2 min-w-[72px] cursor-pointer">
-            <div className="w-16 h-16 bg-pink-100 rounded-[1.25rem] flex justify-center items-center shadow-sm">
+            <div className="w-[68px] h-[68px] bg-gradient-to-br from-pink-50 to-orange-50 rounded-[1.35rem] flex justify-center items-center shadow-[0_5px_16px_rgba(0,0,0,0.08)] border border-white">
                {/* Placeholder for 'All' collage graphic */}
                <div className="grid grid-cols-2 gap-0.5 w-10 h-10 rounded-full overflow-hidden">
                   <div className="bg-orange-300"></div>
@@ -120,7 +120,7 @@ export default function FoodDeliveryUI() {
             { name: 'Momos', price: '₹69' }
           ].map((cat, i) => (
             <div key={i} className="flex flex-col items-center gap-2 min-w-[72px] cursor-pointer">
-              <div className="w-16 h-16 bg-white border border-gray-100 rounded-[1.25rem] flex flex-col justify-end items-center relative overflow-hidden shadow-sm">
+              <div className="w-[68px] h-[68px] bg-white border border-gray-100 rounded-[1.35rem] flex flex-col justify-end items-center relative overflow-hidden shadow-[0_5px_16px_rgba(0,0,0,0.07)]">
                 <div className="w-10 h-10 bg-gray-200 rounded-full mb-3"></div> {/* Image Placeholder */}
                 <div className="absolute bottom-0 w-full bg-pink-500 text-white text-[9px] font-bold text-center py-0.5">
                   FROM {cat.price}
@@ -133,9 +133,9 @@ export default function FoodDeliveryUI() {
       </div>
 
       {/* MEALS SECTION */}
-      <div className="bg-white p-4 pt-6 mt-1">
+      <div className="bg-gray-50 p-4 pt-7 mt-1">
         <div className="flex justify-between items-center mb-5">
-          <h2 className="text-lg font-extrabold text-gray-900">Meals under ₹99</h2>
+          <h2 className="text-xl font-black text-gray-900 tracking-tight">Meals under ₹99</h2>
           <button className="text-gray-500 text-xs font-semibold flex items-center">
             See All <ChevronRight size={14} className="ml-0.5" />
           </button>
@@ -143,7 +143,7 @@ export default function FoodDeliveryUI() {
 
         <div className="flex gap-4 overflow-x-auto no-scrollbar pb-6">
           {/* Card 1 */}
-          <div className="min-w-[150px] bg-white rounded-2xl overflow-visible">
+          <div className="min-w-[150px] bg-white rounded-2xl overflow-visible border border-gray-100 shadow-[0_6px_20px_rgba(0,0,0,0.06)]">
             <div className="relative h-28 bg-gray-800 rounded-2xl mb-4">
               {/* Product Image Placeholder */}
               <div className="absolute top-2 left-2 bg-white text-green-700 text-[10px] font-extrabold px-1.5 py-0.5 rounded shadow-sm">
