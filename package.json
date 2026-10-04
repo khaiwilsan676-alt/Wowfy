@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "build:web": "vite build",
-    "cap:sync": "npx cap sync android"
+    "cap:sync": "npx cap sync android",
+    "build-web": "vite build"
   },
   "dependencies": {
     "@capacitor/android": "^8.0.0",
