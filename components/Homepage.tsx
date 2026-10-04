@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Search, ChevronDown, ChevronRight, Star, Plus } from 'lucide-react';
 
 export default function FoodDeliveryUI() {
+  const orderButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      orderButtonRef.current?.click();
+    }, 3000);
+    return () => window.clearInterval(interval);
+  }, []);
+
   return (
     <div className="max-w-md mx-auto bg-gray-50 min-h-screen font-sans overflow-hidden">
       <div className="bg-orange-500 px-4 pt-4 pb-2">
@@ -40,7 +49,7 @@ export default function FoodDeliveryUI() {
               <h1 className="text-[2.9rem] font-black text-white drop-shadow-sm whitespace-nowrap scale-x-90 origin-left" style={{ WebkitTextStroke: '2.5px black' }}>Good Food</h1>
             </div>
             <p className="text-gray-900 font-bold mt-1 text-[10px] border-b-2 border-gray-900 inline-block pb-0.5">Dishes starting at ₹29</p>
-            <button className="mt-3 bg-yellow-400 text-black font-extrabold text-[9px] py-1 px-2.5 rounded-full border-[2px] border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:scale-90 transition-transform whitespace-nowrap w-max">
+            <button ref={orderButtonRef} className="mt-3 bg-yellow-400 text-black font-extrabold text-[9px] py-1 px-2.5 rounded-full border-[2px] border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:scale-90 transition-transform whitespace-nowrap w-max">
               ORDER NOW
             </button>
           </div>
