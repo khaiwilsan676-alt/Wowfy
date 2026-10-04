@@ -96,11 +96,11 @@ export default function FoodDeliveryUI() {
 
       {/* PROMO STRIP */}
       <div className="bg-yellow-400 w-full py-1.5 text-center flex items-center justify-center gap-2">
-        <span className="text-teal-600 text-xs">✨</span>
+        <span className="text-teal-600 text-xs bg-transparent">✨</span>
         <span className="text-black font-bold text-[11px] tracking-wide">
           GET ADDITIONAL ₹25 FREE CASH
         </span>
-        <span className="text-teal-600 text-xs">✨</span>
+        <span className="text-teal-600 text-xs bg-transparent">✨</span>
       </div>
 
       {/* CATEGORIES */}
