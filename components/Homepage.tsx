@@ -77,11 +77,11 @@ export default function FoodDeliveryUI() {
           </div>
           
           {/* TV Image Section - Used exact requested path */}
-          <div className="w-1/2 flex justify-end translate-x-6">
+          <div className="w-1/2 flex justify-end translate-x-10">
             <img 
               src={`${import.meta.env.BASE_URL}assets/file_00000000f59c82119e801087b7277db9.png`} 
               alt="Good Mood Drop TV" 
-              className="w-full h-auto object-contain scale-[1.9] origin-right"
+              className="w-full h-auto object-contain scale-[2.2] origin-right"
             />
           </div>
         </div>
