@@ -6,7 +6,7 @@ export default function FoodDeliveryUI() {
   
   // Auto-click effect ke liye state
   const [isClicked, setIsClicked] = useState(false);
-  // Images slide hone ke liye state
+  // Images change hone ke liye state
   const [imgIndex, setImgIndex] = useState(0);
 
   const tvImages = [
@@ -16,14 +16,13 @@ export default function FoodDeliveryUI() {
   ];
 
   useEffect(() => {
-    // Image aur Button dono ka interval 3 seconds pe set kiya hai
     const interval = window.setInterval(() => {
-      // Button dabne ka visual effect
+      // Button auto-click ka Toing effect
       setIsClicked(true);
       orderButtonRef.current?.click();
       setTimeout(() => setIsClicked(false), 150);
 
-      // Next image side se aane ke liye update
+      // Har 3 second mein nayi image aayegi (Toing app style)
       setImgIndex((prev) => (prev + 1) % tvImages.length);
     }, 3000);
     
@@ -57,7 +56,7 @@ export default function FoodDeliveryUI() {
           </button>
         </div>
 
-        {/* Search Input - Isko z-20 diya hai taaki TV image iske neeche rahe */}
+        {/* Search Input - z-20 taaki TV image iske peeche (beech mein) rahe */}
         <div className="mt-5 relative z-20">
           <div className="bg-white rounded-2xl p-3 flex items-center gap-2 shadow-sm">
             <Search size={20} className="text-gray-400" />
@@ -68,7 +67,7 @@ export default function FoodDeliveryUI() {
         {/* Main Banner Text & Image Section */}
         <div className="flex justify-between items-center mt-6 pb-4 relative z-0">
           
-          {/* Text & Button Container - z-20 taaki text image ke upar rahe */}
+          {/* Text & Button Container */}
           <div className="w-3/5 relative z-20">
             <div className="leading-[0.85]">
               <h1 className="text-[2.9rem] font-black text-yellow-400 drop-shadow-sm whitespace-nowrap scale-x-75 origin-left" style={{ WebkitTextStroke: '3.5px black' }}>Good Mood</h1>
@@ -87,25 +86,21 @@ export default function FoodDeliveryUI() {
             </button>
           </div>
 
-          {/* TV Image Container - z-0 taaki ye input aur patti ke beech daba rahe */}
+          {/* TV Image Container - z-0 taaki ye patti aur input ke beech daba rahe */}
           <div className="w-1/2 flex justify-end translate-x-12 -translate-y-4 relative h-32 overflow-visible z-0">
             {tvImages.map((src, index) => {
-              let positionClass = '';
-              if (index === imgIndex) {
-                positionClass = 'translate-x-0 opacity-100 z-10'; // Jo screen pe hai
-              } else if (index === (imgIndex - 1 + tvImages.length) % tvImages.length) {
-                positionClass = '-translate-x-[150%] opacity-0 z-0'; // Jo jaa chuki hai (Left side)
-              } else {
-                positionClass = 'translate-x-[150%] opacity-0 z-0'; // Jo aane wali hai (Right side se)
-              }
-
+              const isActive = index === imgIndex;
               return (
                 <img 
                   key={index}
                   src={src} 
                   alt={`Good Mood TV ${index}`} 
-                  className={`absolute top-0 right-0 w-full h-full object-contain scale-[2.05] origin-right transition-all duration-700 ${positionClass}`} 
-                  style={{ transitionTimingFunction: 'cubic-bezier(0.34, 1.56, 0.64, 1)' }} // "Toing" effect wala spring bounce
+                  // Koi sliding nahi! Image bas apni jagah par ekdam 'Toing' (pop-bounce) karegi!
+                  className={`absolute top-0 right-0 w-full h-full object-contain origin-right transition-all duration-500 ${
+                    isActive ? 'scale-[2.05] opacity-100 z-10' : 'scale-[1.7] opacity-0 z-0'
+                  }`} 
+                  // Ekdam real Toing app jaisa bouncy spring effect
+                  style={{ transitionTimingFunction: 'cubic-bezier(0.5, 1.5, 0.4, 1)' }} 
                 />
               );
             })}
@@ -113,7 +108,7 @@ export default function FoodDeliveryUI() {
         </div>
       </div>
 
-      {/* ₹25 Free Cash Banner - Isko relative z-20 de diya taaki TV image iske bhi neeche (peeche) rahe */}
+      {/* ₹25 Free Cash Banner - Isko bhi z-20 diya taaki TV image iske upar na chadhe */}
       <div className="bg-yellow-400 w-full py-1.5 text-center flex items-center justify-center gap-2 relative z-20 shadow-sm">
         <span className="text-teal-600 text-xs bg-transparent">✨</span>
         <span className="text-black font-bold text-[11px] tracking-wide">GET ADDITIONAL ₹25 FREE CASH</span>
