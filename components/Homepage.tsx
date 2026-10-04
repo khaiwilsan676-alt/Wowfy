@@ -40,21 +40,15 @@ export default function FoodDeliveryUI() {
           </button>
         </div>
 
-        {/* Search Bar & Veg Toggle */}
-        <div className="flex items-center gap-3 mt-5">
-          <div className="flex-1 bg-white rounded-2xl p-3 flex items-center gap-2 shadow-sm">
+        {/* Search Bar */}
+        <div className="mt-5">
+          <div className="bg-white rounded-2xl p-3 flex items-center gap-2 shadow-sm">
             <Search size={20} className="text-gray-400" />
             <input
               type="text"
               placeholder="Search for 'Fries'"
               className="w-full outline-none text-gray-700 font-medium placeholder-gray-400 text-sm"
             />
-          </div>
-          <div className="bg-white rounded-2xl p-2 px-3 flex flex-col items-center justify-center shadow-sm border border-gray-100 cursor-pointer">
-            <span className="text-[10px] font-bold text-green-700 mb-1">VEG</span>
-            <div className="w-8 h-4 bg-gray-200 rounded-full relative flex items-center">
-              <div className="w-3.5 h-3.5 bg-green-600 rounded-full absolute left-0.5 border border-white"></div>
-            </div>
           </div>
         </div>
 
