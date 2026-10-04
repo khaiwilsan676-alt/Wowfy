@@ -69,7 +69,7 @@ export default function FoodDeliveryUI() {
                 Good Mood
               </h1>
               <h1 
-                className="text-[2.7rem] font-black text-white drop-shadow-sm whitespace-nowrap" 
+                className="text-4xl font-black text-white drop-shadow-sm whitespace-nowrap" 
                 style={{ WebkitTextStroke: '1.5px black' }}
               >
                 Good Food
@@ -84,11 +84,11 @@ export default function FoodDeliveryUI() {
           </div>
           
           {/* TV Image Section - Used exact requested path */}
-          <div className="w-2/5 flex justify-end">
+          <div className="w-2/5 flex justify-end translate-x-2">
             <img 
               src={`${import.meta.env.BASE_URL}assets/file_00000000f59c82119e801087b7277db9.png`} 
               alt="Good Mood Drop TV" 
-              className="w-full h-auto object-contain scale-110 origin-right"
+              className="w-full h-auto object-contain scale-[1.3] origin-right"
             />
           </div>
         </div>
