@@ -7,14 +7,14 @@ export default function FoodDeliveryUI() {
   // Auto-click effect ke liye state
   const [isClicked, setIsClicked] = useState(false);
 
-  // TV IMAGE (Frame sabse aage rahega)
+  // TV IMAGE (Frame sabse aage rahega - z-10)
   const tvBaseImage = `${import.meta.env.BASE_URL}assets/file_00000000f59c82119e801087b7277db9.png`;
   
-  // VIDEO (Jo TV ke andar chalega)
+  // VIDEO (Jo TV ke andar chalega - z-0)
   const tvVideo = `${import.meta.env.BASE_URL}assets/gemini_generated_video_5f00f6e1.mp4`;
 
   useEffect(() => {
-    // Sirf Button auto-click ka logic bacha hai, video apne aap HTML5 autoPlay se chalegi
+    // Har 3 second mein button auto-click hoga
     const interval = window.setInterval(() => {
       setIsClicked(true);
       orderButtonRef.current?.click();
@@ -51,7 +51,7 @@ export default function FoodDeliveryUI() {
           </button>
         </div>
 
-        {/* Search Input - z-20 taaki TV image iske peeche (beech mein) rahe */}
+        {/* Search Input - z-20 taaki TV image iske peeche rahe */}
         <div className="mt-5 relative z-20">
           <div className="bg-white rounded-2xl p-3 flex items-center gap-2 shadow-sm">
             <Search size={20} className="text-gray-400" />
@@ -84,18 +84,17 @@ export default function FoodDeliveryUI() {
           {/* TV & Video Container */}
           <div className="w-1/2 flex justify-end translate-x-12 -translate-y-4 relative h-32 overflow-visible z-0 pointer-events-none">
             
-            {/* 1. VIDEO - Yeh TV frame ke PEECHE (z-0) autoplay hogi */}
+            {/* 1. VIDEO - TV ke PEECHE (z-0) aur -rotate-[3deg] left side rotate ho gaya */}
             <video 
               src={tvVideo}
               autoPlay
               loop
               muted
               playsInline
-              // Scale 1.85 rakha hai taaki TV screen ke andar fit aaye (agar chota/bada karna ho toh isko change karlena)
-              className="absolute top-0 right-0 w-full h-full object-contain origin-right z-0 scale-[1.85]" 
+              className="absolute top-0 right-0 w-full h-full object-contain origin-right z-0 scale-[1.85] -rotate-[3deg]" 
             />
 
-            {/* 2. TV IMAGE FRAME - Yeh video ke AAGE (z-10) rahegi ekdam fix */}
+            {/* 2. TV IMAGE FRAME - Video ke AAGE (z-10) */}
             <img 
               src={tvBaseImage} 
               alt="Good Mood TV" 
@@ -106,7 +105,7 @@ export default function FoodDeliveryUI() {
         </div>
       </div>
 
-      {/* ₹25 Free Cash Banner */}
+      {/* ₹25 Free Cash Banner - Isko z-20 diya hai taaki TV iske upar na aaye */}
       <div className="bg-yellow-400 w-full py-1.5 text-center flex items-center justify-center gap-2 relative z-20 shadow-sm">
         <span className="text-teal-600 text-xs bg-transparent">✨</span>
         <span className="text-black font-bold text-[11px] tracking-wide">GET ADDITIONAL ₹25 FREE CASH</span>
