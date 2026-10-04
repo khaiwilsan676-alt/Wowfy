@@ -6,27 +6,31 @@ export default function FoodDeliveryUI() {
   
   // Auto-click effect ke liye state
   const [isClicked, setIsClicked] = useState(false);
-  // Images change hone ke liye state
+  
+  // Sirf Food images change hone ke liye state
   const [imgIndex, setImgIndex] = useState(0);
   // Toing (bounce) effect ke liye state
   const [isToing, setIsToing] = useState(false);
 
-  const tvImages = [
-    `${import.meta.env.BASE_URL}assets/file_00000000f59c82119e801087b7277db9.png`,
+  // TV IMAGE (Yeh hamesha fix rahegi, kabhi nahi hategi)
+  const tvBaseImage = `${import.meta.env.BASE_URL}assets/file_00000000f59c82119e801087b7277db9.png`;
+  
+  // BURGER / FOOD IMAGES (Yeh dono TV ke upar change hongi)
+  const foodImages = [
     `${import.meta.env.BASE_URL}assets/file_000000006af88211ab3b298690553214.png`,
     `${import.meta.env.BASE_URL}assets/file_00000000b01482118ee1aa8d0c543de9.png`
   ];
 
   useEffect(() => {
     const interval = window.setInterval(() => {
-      // Button dabne ka visual effect
+      // Button dabne ka Toing effect
       setIsClicked(true);
       orderButtonRef.current?.click();
       setTimeout(() => setIsClicked(false), 150);
 
-      // Image change aur Toing (Bounce) effect start
+      // Food image change aur Toing (Bounce) effect start
       setIsToing(true);
-      setImgIndex((prev) => (prev + 1) % tvImages.length); // Image instantly change hogi (gayab nahi hogi)
+      setImgIndex((prev) => (prev + 1) % foodImages.length);
       
       // Thodi der baad wapas normal size pe aane ka bounce effect
       setTimeout(() => setIsToing(false), 300); 
@@ -92,18 +96,26 @@ export default function FoodDeliveryUI() {
             </button>
           </div>
 
-          {/* TV Image Container - Ab yeh gayab nahi hogi! */}
+          {/* TV & Food Image Container - Ab TV hategi hi nahi! */}
           <div className="w-1/2 flex justify-end translate-x-12 -translate-y-4 relative h-32 overflow-visible z-0">
-            {/* Sirf 1 image tag rakha hai taaki gayab hone ka chance hi na rahe */}
+            
+            {/* 1. TV IMAGE - Ekdam fix, no animation, hamesha rahegi z-0 par */}
             <img 
-              src={tvImages[imgIndex]} 
+              src={tvBaseImage} 
               alt="Good Mood TV" 
-              // Jab Toing effect chalega toh thodi chhoti hoke fir 2.05 pe uchhal ke wapas aayegi
-              className={`absolute top-0 right-0 w-full h-full object-contain origin-right transition-transform duration-500 ${
-                isToing ? 'scale-[1.5]' : 'scale-[2.05]'
+              className="absolute top-0 right-0 w-full h-full object-contain scale-[2.05] origin-right z-0" 
+            />
+
+            {/* 2. FOOD IMAGES - Yeh TV ke upar (z-10) aayengi aur 'Toing' karengi */}
+            <img 
+              src={foodImages[imgIndex]} 
+              alt="Food Item" 
+              className={`absolute top-0 right-0 w-full h-full object-contain origin-right transition-transform duration-500 z-10 ${
+                isToing ? 'scale-[1.6]' : 'scale-[2.05]' // Toing pop effect
               }`} 
               style={{ transitionTimingFunction: 'cubic-bezier(0.5, 1.8, 0.4, 1)' }} // Spring Bounce Effect
             />
+
           </div>
         </div>
       </div>
