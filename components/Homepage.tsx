@@ -88,7 +88,7 @@ export default function FoodDeliveryUI() {
             <img 
               src={`${import.meta.env.BASE_URL}assets/file_00000000f59c82119e801087b7277db9.png`} 
               alt="Good Mood Drop TV" 
-              className="w-full h-auto object-contain scale-[1.3] origin-right"
+              className="w-full h-auto object-contain scale-[1.5] origin-right"
             />
           </div>
         </div>
