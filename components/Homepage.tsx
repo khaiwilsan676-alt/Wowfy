@@ -80,8 +80,8 @@ export default function FoodDeliveryUI() {
           {/* Text & Button Container */}
           <div className="w-3/5 relative z-20">
             <div className="leading-[0.85]">
-              <h1 className="text-[2.9rem] font-black text-yellow-400 drop-shadow-sm whitespace-nowrap scale-x-75 origin-left" style={{ WebkitTextStroke: '3.5px black' }}>Good Mood</h1>
-              <h1 className="text-[2.9rem] font-black text-white drop-shadow-sm whitespace-nowrap scale-x-75 origin-left" style={{ WebkitTextStroke: '3.5px black' }}>Good Food</h1>
+              <h1 className="text-[2.9rem] font-black text-yellow-400 drop-shadow-sm whitespace-nowrap scale-x-75 origin-left" style={{ WebkitTextStroke: '3.5px black' }}>Good Food</h1>
+              <h1 className="text-[2.9rem] font-black text-white drop-shadow-sm whitespace-nowrap scale-x-75 origin-left" style={{ WebkitTextStroke: '3.5px black' }}>Good Mood</h1>
             </div>
             <p className="text-gray-900 font-bold mt-1 text-[10px] border-b-2 border-gray-900 inline-block pb-0.5">Dishes starting at ₹29</p>
             <button 
@@ -104,7 +104,7 @@ export default function FoodDeliveryUI() {
               src={foodImages[imgIndex]} 
               alt="Food Item" 
               className={`absolute top-0 right-0 w-full h-full object-contain origin-right transition-transform duration-500 z-0 ${
-                isToing ? 'scale-[1.6]' : 'scale-[2.05]' // Toing pop effect TV ke andar
+                isToing ? 'scale-[1.3]' : 'scale-[1.3]' // Toing pop effect TV ke andar
               }`} 
               style={{ transitionTimingFunction: 'cubic-bezier(0.5, 1.8, 0.4, 1)' }} // Spring Bounce Effect
             />
